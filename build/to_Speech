@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text to Speech</title>
+</head>
+<body>
+  <h2>🔊 Type and Speak</h2>
+  <textarea id="textInput" rows="4" cols="50" placeholder="Type your message here..."></textarea><br>
+  <button onclick="speakText()">Speak</button>
+
+  <script>
+    function speakText() {
+      const text = document.getElementById("textInput").value;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "en-US"; // You can change this to "hi-IN", "ta-IN", etc.
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
